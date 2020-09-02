@@ -11,13 +11,22 @@ For assistance:bbbbbb
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
 
-vvvvv
+
 
 /*
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
-kjjjjjjjjjjj
+
+function showPage(list, page){
+   studentsPerPage=9;
+   let lastStudent = "";
+   let firstStudent = "";
+   let studentList = document.querySelector(".student-list");//selected student-list from html page and assigned it to a variable
+   studentList.innerHTML= "";// assigned the student list to an empty string
+
+
+}
 
 
 
