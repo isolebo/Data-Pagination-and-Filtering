@@ -11,9 +11,9 @@ This function will create and insert/append the elements needed to display a "pa
 */
 
 
-const showPage = (list, page) => { //function to create a student list up to 9 in a page
+const pageItems = 9;// global variable to display the items per page
 
-   const pageItems = 9;//variable to display the items per page
+const showPage = (list, page) => { //function to create a student list up to 9 in a page 
    let startIndex =(page * pageItems)-pageItems; //calculates the  first index of students
    let endIndex = page * pageItems;// calculates last student to be diplayed
    let studentList = document.querySelector(".student-list");//selected student-list from html page and assigned it to a variable
@@ -45,14 +45,27 @@ const showPage = (list, page) => { //function to create a student list up to 9 i
    } 
 };
 
- showPage(data,1);
+ //showPage(data,1); //calling function to display students
 
 /*
 Create the `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+function addPagination(list){
+   const numOfPages = Math.ceil(list.length / pageItems); //calculates the number of pagination buttons
+   const linkList = document.querySelector(".link-list");// selecting link-list, paginatio buttons will be added to this element
+   linkList.innerHTML = " ";
 
+   for(let i = 1; i <= numOfPages.length; i++){ // for loop for the number of pages to be shown
+
+
+   }
+
+   console.log(list);
+}
+
+addPagination(data);
 
 // Call functions
 
