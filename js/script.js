@@ -6,14 +6,6 @@ FSJS Project 2 - Data Pagination and Filtering
 
 
 /*
-For assistance:bbbbbb
-   Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
-   Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
-*/
-
-
-
-/*
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
@@ -32,6 +24,7 @@ const showPage = (list, page) => { //function to create a student list up to 9 i
       if(i >= startIndex && i < endIndex){//conditional statement to check to if certain students are between these indexes
         
          let studentsInfo= '';
+
          /*
             Template literal to create DOM elements to display the students info 
          */ 
@@ -52,11 +45,7 @@ const showPage = (list, page) => { //function to create a student list up to 9 i
    } 
 };
 
- showPage(data,1)
-
-
-
-
+ showPage(data,1);
 
 /*
 Create the `addPagination` function
