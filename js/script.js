@@ -45,7 +45,6 @@ const showPage = (list, page) => { //function to create a student list up to 9 i
    } 
 };
 
- //showPage(data,1); //calling function to display students
 
 /*
 Create the `addPagination` function
@@ -57,14 +56,29 @@ function addPagination(list){
    const linkList = document.querySelector(".link-list");// selecting link-list, paginatio buttons will be added to this element
    linkList.innerHTML = " ";
 
-   for(let i = 1; i <= numOfPages.length; i++){ // for loop for the number of pages to be shown
+   for(let i = 1; i <= numOfPages; i++){ // for loop for the number of pages to be shown
 
+      let paginationButton = " ";
+      paginationButton += `<li>
+         <button type = "button">${i}
+      <li>
+      `
+      linkList.insertAdjacentHTML('beforeend',paginationButton);
+      let firstButton = document.querySelector("button");
+      firstButton.className = "active";
 
-   }
-
-   console.log(list);
+      linkList.addEventListener('click', (e) => {
+         if(e.target.tagName === 'BUTTON'){
+            let firstElement = document.querySelector('.active');
+            e.target.className = 'active';
+            firstElement = '';
+            
+            showPage(list, e.target.textContent)
+         }
+   });
+   }  
 }
-
+showPage(data,1); //calling function to display students
 addPagination(data);
 
 // Call functions
