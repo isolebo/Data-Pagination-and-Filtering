@@ -2,14 +2,6 @@
 Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
 */
-//Downloaded project files
-
-
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
-
 
 const pageItems = 9;// global variable to display the items per page
 
@@ -46,28 +38,25 @@ const showPage = (list, page) => { //function to create a student list up to 9 i
 };
 
 
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
 
-function addPagination(list){
-   const numOfPages = Math.ceil(list.length / pageItems); //calculates the number of pagination buttons
+   function addPagination(list){//This function will create and insert/append the elements needed for the pagination buttons
+
+   const numOfPages = Math.ceil(list.length / pageItems); //calculates the number of pages needed
    const linkList = document.querySelector(".link-list");// selecting link-list, paginatio buttons will be added to this element
    linkList.innerHTML = " ";
 
    for(let i = 1; i <= numOfPages; i++){ // for loop for the number of pages to be shown
 
-      let paginationButton = " ";
+      let paginationButton = " ";//creates a template literal to be inserted in dom
       paginationButton += `<li>
          <button type = "button">${i}
       <li>
       `
-      linkList.insertAdjacentHTML('beforeend',paginationButton);
+      linkList.insertAdjacentHTML('beforeend',paginationButton);// inserts the literal to the dom
       let firstButton = document.querySelector("button");
       firstButton.className = "active";
 
-      linkList.addEventListener('click', (e) => {
+      linkList.addEventListener('click', (e) => {// event to click the page numbers
          if(e.target.tagName === 'BUTTON'){
             let firstElement = document.querySelector('.active');
             e.target.className = 'active';
@@ -78,9 +67,9 @@ function addPagination(list){
    });
    }  
 }
-showPage(data,1); //calling function to display students
+showPage(data,1); //calling function to display students and page number
 addPagination(data);
 
-// Call functions
+
 
 
